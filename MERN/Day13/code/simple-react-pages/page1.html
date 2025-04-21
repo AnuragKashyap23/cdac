@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>page1</title>
+  </head>
+  <body>
+    <h1>Page1</h1>
+    <button onclick="onClick()">click me</button>
+    <div id="div1"></div>
+
+    <script>
+      function onClick() {
+        const myname = 'amit'
+
+        // get the object of div using id: div1
+        const div = document.getElementById('div1')
+        div.innerHTML = `Hi ${myname}, good morning!!`
+      }
+    </script>
+  </body>
+</html>

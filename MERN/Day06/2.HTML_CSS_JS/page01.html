@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="author" content="Rohan Paramane">
+    <title>DOM</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+    <h1>This is a header 1</h1>
+    <div>
+        <p>This is a para 1</p>
+        <p>This is a para 2</p>
+    </div>
+    <div> This is a div 1</div>
+    <br>
+    <button onclick="sayHelloWorld()">Hello World</button>
+    <button onclick="fromDac()">DAC</button>
+    <button onclick="find()">Who is it?</button>
+    <script>
+        function sayHelloWorld() {
+            // window.alert("Button Clicked")
+            let h1 = document.firstElementChild.lastElementChild.firstElementChild
+            console.dir(h1)
+            h1.innerText = "Hello World"
+        }
+
+        function fromDac() {
+            let p1 = document.firstElementChild.lastElementChild.children[1].firstElementChild
+            // p1.innerText = "From Dac"
+            // p1.innerText = "<b>From DAC</b>"
+            p1.innerHTML = "<b>From DAC</b>"
+        }
+
+        function find() {
+            let name = window.prompt("What's Your name - ")
+            if (name != null) {
+                let d1 = document.firstElementChild.lastElementChild.children[2]
+                console.dir(d1)
+                // d1.innerHTML = "<i>" + name + "</i>"
+                d1.innerHTML = `<i>${name}</i>`
+            }
+        }
+    </script>
+</body>
+
+</html>

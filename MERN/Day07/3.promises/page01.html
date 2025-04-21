@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback hell</title>
+    <script src="callback_based_internal_library.js"></script>
+</head>
+
+<body>
+    <!-- Code developed by Junior developer -->
+    <button onclick="getData()">Get Data</button>
+    <script>
+        function getData() {
+            getEmployeeByID(1, (empdata, error) => {
+                if (empdata) {
+                    console.log(empdata)
+                    getDepartmentDetails(empdata.deptno, (deptdata, error) => {
+                        if (deptdata) {
+                            console.log(deptdata)
+                        }
+                        else {
+                            console.log(error)
+                        }
+                    })
+                }
+                else {
+                    console.log(error)
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

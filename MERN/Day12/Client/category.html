@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>category</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+</head>
+
+<body onload="getCategories()">
+    <div id="maindiv" class="container d-flex">
+
+    </div>
+    <script>
+        async function getCategories() {
+            const maindiv = document.getElementById('maindiv')
+            const response = await fetch("http://localhost:4000/category", {
+                method: "GET",
+                headers: {
+                    token: window.sessionStorage.getItem('token')
+                }
+            })
+            const result = await response.json()
+            if (result.status == 'success') {
+                const arr = result.data
+                for (category of arr) {
+                    const card = `
+                     <div class="card m-3" style="width: 18rem;">
+                        <img src="http://localhost:4000/${category.image}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${category.title}</h5>
+                            <p class="card-text">${category.details}</p>
+                            <a href="#" class="btn btn-primary">Explore</a>
+                        </div>
+                    </div>`
+                    maindiv.innerHTML += card
+                }
+            }
+            else
+                window.alert(result.error)
+
+
+        }
+    </script>
+</body>
+
+</html>

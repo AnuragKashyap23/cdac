@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Object using Object Literal</title>
+</head>
+
+<body>
+    <script>
+        function f1() {
+            var name = "Anil"
+            var age = 30
+            var mobile = "9876544268"
+
+            var name2 = "Mukesh"
+            var age2 = 32
+            var mobile2 = "7832798899"
+
+            var name3 = "Ramesh"
+            var age3 = 34
+            var mobile3 = "8788363846"
+        }
+
+        function f2() {
+            var p1 = {} // Object -> JSON
+            p1.name = "Anil" // Properties
+            p1.age = 30
+            p1.mobile = "9837328473"
+            console.log(p1)
+            console.log(typeof (p1))
+
+            var p2 = {
+                // properties of an object
+                // key:value
+                name: "Mukesh",
+                age: 32,
+                mobile: "8764624334"
+            }
+            console.log(p2)
+
+            var p3 = {}
+            p3["name"] = "Ramesh"
+            p3["age"] = 35
+            p3["mobile"] = "7849372537"
+            console.log(p3)
+        }
+        f2()
+
+
+    </script>
+</body>
+
+</html>

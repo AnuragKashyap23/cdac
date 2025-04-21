@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Function</title>
+</head>
+
+<body>
+    <script>
+
+        function Person(name, age, mobile) {
+            this.name = name
+            this.age = age
+            this.mobile = mobile
+        }
+
+        // function should be inside the person object
+        // make the function as person object's method
+        function display() {
+            // logic that belongs only to the person object
+            console.log('Name - ' + this.name)
+            console.log('Age - ' + this.age)
+            console.log('Mobile - ' + this.mobile)
+        }
+
+        function f1() {
+
+            var p1 = {
+                name: "Anil",
+                age: 30,
+                mobile: "9887455647",
+                displayPerson: display
+            }
+
+            var p2 = new Object();
+            p2.name = "Mukesh"
+            p2.age = 32
+            p2.mobile = "89746455647"
+            p2.displayPerson = display
+
+            console.log(p1)
+            console.log(p2)
+
+            var p3 = new Person("Ramesh", 35, "7452846284")
+            p3.displayPerson = display
+            console.log(p3)
+
+            p1.displayPerson()
+            p2.displayPerson()
+            p3.displayPerson()
+
+            var p4 = new Person("Suresh", 40, "9846583795")
+            p4.displayPerson = display
+            p4.displayPerson()
+        }
+        f1();
+    </script>
+</body>
+
+</html>

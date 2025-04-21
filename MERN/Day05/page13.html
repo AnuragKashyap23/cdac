@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <script>
+        function add(n1, n2) {
+            console.log("Addition - " + (n1 + n2))
+        }
+
+        function sub(n1, n2) {
+            console.log("substraction - " + (n1 - n2))
+        }
+
+        function mul(n1, n2) {
+            console.log("Multiplication - " + (n1 * n2))
+        }
+
+        function f1() {
+            var arr = [add, sub, mul] // array of functions
+            arr[0] = add
+            console.log(arr)
+            console.log(typeof (arr))
+
+            for (var i = 0; i < arr.length; i++)
+                console.log(arr[i])
+
+            console.log(typeof (arr[0]))
+
+            arr[0](10, 20)
+            arr[1](50, 20)
+            arr[2](7, 21)
+        }
+        f1();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Adding the Jquery to your html page -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <br>
+    <button onclick="hide()">hide</button>
+    <button onclick="show()">show</button>
+    <hr>
+    <button onclick="slideup()">slide up</button>
+    <button onclick="slidedown()">slide down</button>
+    <hr>
+    <button onclick="animation1()">Animation1</button>
+    <button onclick="animation2()">Animation2</button>
+    <script>
+        function hide() {
+            // $("div").css("display", "none")
+            $("div").hide(1000)
+        }
+        function show() {
+            // $("div").css("display", "block")
+            $("div").show(1000)
+        }
+        function slideup() {
+            $("div").slideUp(1000)
+        }
+        function slidedown() {
+            $("div").slideDown(1000)
+        }
+
+        function animation1() {
+            $("div").animate({
+                width: "500px"
+            }, 1000)
+        }
+
+        function animation2() {
+            $("div").animate({
+                width: "500px"
+            }, 1000).animate({
+                height: "500px"
+            }, 1000)
+        }
+
+    </script>
+</body>
+
+</html>

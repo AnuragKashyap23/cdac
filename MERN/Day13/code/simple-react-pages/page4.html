@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body onload="loadReactComponent()">
+    <h1>React-demo1</h1>
+    <div id="root"></div>
+
+    <script>
+      function loadReactComponent() {
+        // create a simple h2 element
+        // param1: name of the element
+        // param2: properties of element
+        // param3: children of element
+        const h2 = React.createElement('h2', {}, 'welcome to react')
+
+        // get the root element
+        const root = document.getElementById('root')
+
+        // render the h2 element
+        // param1: element to be rendered
+        // param2: root element to render the element
+        ReactDOM.render(h2, root)
+        // console.log(ReactDOM)
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Function</title>
+</head>
+
+<body>
+    <script>
+
+        function Person(name, age, mobile) {
+            this.name = name
+            this.age = age
+            this.mobile = mobile
+        }
+
+        function display() {
+            console.log('Name - ' + this.name)
+            console.log('Age - ' + this.age)
+            console.log('Mobile - ' + this.mobile)
+        }
+
+        // prototype
+        // used to add the function as methods in to all the objects
+        Person.prototype.displayPerson = display
+
+        function f1() {
+
+            var p1 = {
+                name: "Anil",
+                age: 30,
+                mobile: "9887455647",
+                displayPerson: display
+            }
+
+
+            var p2 = new Object();
+            p2.name = "Mukesh"
+            p2.age = 32
+            p2.mobile = "89746455647"
+            p2.displayPerson = display
+
+
+            var p3 = new Person("Ramesh", 35, "7452846284")
+            console.log(p1)
+            console.log(p2)
+            console.log(p3)
+
+            p1.displayPerson()
+            p2.displayPerson()
+            p3.displayPerson()
+            debugger
+            var p4 = new Person("Suresh", 40, "9846583795")
+            console.log(p4)
+            p4.displayPerson()
+        }
+        f1();
+    </script>
+</body>
+
+</html>

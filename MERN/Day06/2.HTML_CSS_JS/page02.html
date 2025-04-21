@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Header 1</h1>
+    <h1>Header 2</h1>
+
+    <h2 id="courseh2">Header 3</h2>
+    <h2 class="info">Header 4</h2>
+
+    <p class="info">This is a para 1</p>
+
+    <button onclick="sayHello()">Say Hello</button>
+    <button onclick="showcourse()">Show Course</button>
+    <button onclick="showaddress()">Show address</button>
+
+    <script>
+
+        function showaddress() {
+            let arr_tags = document.getElementsByClassName("info")
+            console.log(arr_tags)
+            arr_tags[0].innerText = "Sunbeam, Hinjweadi"
+            arr_tags[1].innerHTML = "<u>Near Infosys Phase 2</u>"
+        }
+
+        function showcourse() {
+            let h2 = document.getElementById("courseh2")
+            console.log(h2)
+            console.dir(h2)
+            h2.innerText = "DAC course"
+            h2.style.color = "red"
+        }
+
+        function sayHello() {
+            // getElementsByTagName return an array of all the elements 
+            // searched by the given tag as JS object
+            let arrh1 = document.getElementsByTagName("h1")
+            console.log(arrh1)
+            console.log(arrh1[0])
+            arrh1[0].innerText = "Hello"
+            arrh1[1].innerText = "World"
+        }
+    </script>
+</body>
+
+</html>

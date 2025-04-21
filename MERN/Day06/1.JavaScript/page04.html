@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(name, mobile) {
+                this.name = name
+                this.mobile = mobile
+            }
+            display() {
+                console.log("Name - " + this.name)
+                console.log("Mobile - " + this.mobile)
+            }
+        }
+
+        //Employee is-a Person
+        class Employee extends Person {
+            constructor(id, name, mobile, salary) {
+                // It is used to give a call to the Parent class ctor
+                // It is compulsary in JS
+                super(name, mobile)
+                this.id = id
+                this.salary = salary
+            }
+            display() {
+                console.log("Id - " + this.id)
+                super.display()
+                console.log("Salary - " + this.salary)
+            }
+        }
+
+        const p1 = new Person("Anil", "9847362844")
+        console.log(p1)
+        // p1.display()
+
+        const e1 = new Employee(1, "Anil", "9873562537", 10000)
+        console.log(e1)
+        e1.display()
+    </script>
+</body>
+
+</html>

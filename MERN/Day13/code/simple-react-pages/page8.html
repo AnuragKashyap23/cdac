@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <h1>React - demo</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // object:
+      // - a collection of key-value pairs
+      // - keys: properties
+      // object having key-value pairs
+      const person = {
+        firstName: 'John',
+        lastName: 'Doe',
+        address: '123 Main St, Springfield, USA',
+        age: 30,
+      }
+
+      // rendering the object using JSX
+      //   const div = (
+      //     <div>
+      //       <div>First Name: {person.firstName}</div>
+      //       <div>Last Name: {person['lastName']}</div>
+      //       <div>Address: {person.address}</div>
+      //       <div>Age: {person['age']}</div>
+      //     </div>
+      //   )
+
+      // object destructuring
+      const { firstName, lastName, address, age } = person
+      const div = (
+        <div>
+          <div>First Name: {firstName}</div>
+          <div>Last Name: {lastName}</div>
+          <div>Address: {address}</div>
+          <div>Age: {age}</div>
+        </div>
+      )
+
+      ReactDOM.render(div, document.getElementById('root'))
+    </script>
+  </body>
+</html>

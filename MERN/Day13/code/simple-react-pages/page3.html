@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>page3</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+      .myh3 {
+        color: red;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body onload="loadReactComponent()">
+    <h1>React - demo1</h1>
+    <div id="root"></div>
+
+    <script>
+      function loadReactComponent() {
+        // create an element
+        const h3 = React.createElement(
+          'h3',
+          {
+            className: 'myh3',
+          },
+          'Welcome to React'
+        )
+        const div = document.getElementById('root')
+
+        // render the element
+        ReactDOM.render(h3, div)
+      }
+    </script>
+  </body>
+</html>

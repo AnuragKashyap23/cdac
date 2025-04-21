@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+</head>
+
+<body align="center">
+    <div>
+        <label>Empid</label>
+        <input type="number" id="eid">
+    </div>
+
+    <div>
+        <label>Name</label>
+        <input type="text" id="name">
+    </div>
+
+    <div>
+        <label>Salary</label>
+        <input type="number" id="salary">
+    </div>
+    <br>
+    <button onclick="save()">Save</button>
+    <hr>
+
+    <table border="1" align="center">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Total</td>
+                <td id="total"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        function save() {
+            // fetching all the required tags as objects in JS
+            let empid = document.getElementById("eid").value
+            let name = document.getElementById("name").value
+            let salary = document.getElementById("salary").value
+            let tbody = document.getElementById("tbody")
+            let total = document.getElementById("total")
+            console.log(empid)
+            console.log(name)
+            console.log(salary)
+
+            // adding the new row with the data in the table
+            tbody.innerHTML += `
+                <tr>
+                    <td>${empid}</td>
+                    <td>${name}</td>
+                    <td>${salary}</td>
+                </tr>`
+
+            // Calculating the total salary
+            let totalSalary = 0
+            let arr = tbody.children
+            // Iterating the table and getting the salaray column
+            for (tr of arr) {
+                let sal = parseInt(tr.lastElementChild.innerText)
+                totalSalary += sal
+            }
+            // setting the total salary in the table footer
+            total.innerText = totalSalary
+
+        }
+    </script>
+</body>
+
+</html>

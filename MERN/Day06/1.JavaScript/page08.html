@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Functions</title>
+</head>
+
+<body>
+    <script>
+        function add(n1, n2) {
+            let addition = n1 + n2
+            console.log("Addition - " + addition)
+        }
+
+        function sub(n1, n2) {
+            let substraction = n1 - n2
+            console.log("Substraction - " + substraction)
+        }
+
+
+
+        function executer(n1, n2, fn) {
+            fn(n1, n2)
+        }
+
+        executer(10, 20, add)
+        executer(20, 5, sub)
+        executer(5, 7, function (n1, n2) {
+            let multiplication = n1 * n2
+            console.log("Multiplication - " + multiplication)
+        })
+        executer(10, 2, (n1, n2) => {
+            let division = n1 / n2
+            console.log("Division - " + division)
+        })
+
+    </script>
+</body>
+
+</html>

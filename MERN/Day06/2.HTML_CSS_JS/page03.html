@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+</head>
+
+<body align="center">
+    <div>
+        <label>Empid</label>
+        <input type="number" id="eid">
+    </div>
+
+    <div>
+        <label>Name</label>
+        <input type="text" id="name">
+    </div>
+
+    <div>
+        <label>Salary</label>
+        <input type="number" id="salary">
+    </div>
+    <br>
+    <button onclick="save()">Save</button>
+    <hr>
+
+    <table border="1" align="center">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+
+    <script>
+        function save() {
+            let empid = document.getElementById("eid").value
+            let name = document.getElementById("name").value
+            let salary = document.getElementById("salary").value
+            let tbody = document.getElementById("tbody")
+            console.log(empid)
+            console.log(name)
+            console.log(salary)
+            tbody.innerHTML += `
+                <tr>
+                    <td>${empid}</td>
+                    <td>${name}</td>
+                    <td>${salary}</td>
+                </tr>`
+        }
+    </script>
+</body>
+
+</html>

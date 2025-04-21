@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="h1">Header 1</h1>
+    <h2 id="h2">Header 2</h2>
+
+    <div class="mydiv">This is div 1</div>
+    <div class="mydiv">This is div 2</div>
+    <br>
+    <button onclick="sayHello()">sayHello</button>
+    <button onclick="displayAddress()">Address</button>
+    <script>
+        function sayHello() {
+            const h1 = document.getElementById("h1")
+            h1.innerText = "Welcome"
+            const h2 = document.getElementById("h2")
+            h2.innerText = "To Sunbeam"
+            h2.style.color = "red"
+        }
+
+        function displayAddress() {
+            // const arrDivs = document.getElementsByTagName("div")
+            const arrDivs = document.getElementsByClassName("mydiv")
+            console.log(arrDivs)
+            arrDivs[0].innerHTML = "<b>Near Infosys Phase-2</b>"
+            arrDivs[1].innerHTML = "<i>Hinjewadi Pune</i>"
+        }
+    </script>
+</body>
+
+</html>

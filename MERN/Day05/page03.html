@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Object using new keyword</title>
+</head>
+
+<body>
+    <script>
+        function f1() {
+            var p1 = new Object()
+            // properties
+            p1.name = "Anil"
+            p1.age = 30
+            p1.mobile = "9875463726"
+            console.log(p1)
+
+            var p2 = new Object()
+            p2["name"] = "Mukesh"
+            p2["age"] = 32
+            p2["mobile"] = "8764537284"
+
+            console.log(p2)
+        }
+        f1()
+
+    </script>
+</body>
+
+</html>

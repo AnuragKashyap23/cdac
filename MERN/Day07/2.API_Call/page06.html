@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Adding the Jquery to your html page -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body>
+    <button onclick="getData()" class="btn btn-primary">Get Data</button>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>User Id</td>
+                <td>User Email</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+    <script>
+        function getData() {
+            $.ajax({
+                url: "https://reqres.in/api/users",
+                method: "GET",
+                success: (response) => {
+                    console.log(response)
+                    const arr = response.data
+                    console.log(arr)
+                    for (u of arr) {
+                        const row = `<tr>
+                            <td>${u.id}</td>
+                            <td>${u.email}</td>
+                            <td>${u.first_name}</td>
+                            <td>${u.last_name}</td>
+                            </tr>`
+                        $("tbody").append(row)
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

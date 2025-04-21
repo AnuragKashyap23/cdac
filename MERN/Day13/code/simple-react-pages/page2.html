@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>page2</title>
+  </head>
+  <body>
+    <h1>Page2</h1>
+    <button onclick="onClick()">load the data</button>
+    <div id="table-data"></div>
+
+    <script>
+      // data: array of objects
+      const products = [
+        { id: 1, title: 'product 1', price: 100 },
+        { id: 2, title: 'product 2', price: 200 },
+        { id: 3, title: 'product 3', price: 300 },
+        { id: 4, title: 'product 4', price: 400 },
+        { id: 5, title: 'product 5', price: 500 },
+      ]
+
+      function onClick() {
+        // create a table header
+        const tableHeader = `
+            <thead>
+                <tr>   
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        `
+
+        // create rows
+        let rows = ''
+        for (const product of products) {
+          rows += `
+                <tr>
+                    <td>${product['id']}</td>
+                    <td>${product['title']}</td>
+                    <td>${product['price']}</td>
+                    <td>
+                        <button>delete</button>
+                    </td>
+                </tr>
+            `
+        }
+
+        // create the final table
+        const table = `
+            <table border="1">
+                ${tableHeader}
+                <tbody>
+                    ${rows}
+                </tbody>
+            </table>
+        `
+
+        // load the table structure in the required div
+        const div = document.getElementById('table-data')
+        div.innerHTML = table
+      }
+    </script>
+  </body>
+</html>

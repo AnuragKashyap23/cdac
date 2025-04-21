@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Object using constructor Function</title>
+</head>
+
+<body>
+    <script>
+
+        // constructor function
+        // this function is designed to call using new and hence called as ctor function 
+        // the ctor function should have the name starting with capital letter
+        function Person(name, age, mobile) {
+            this.name = name
+            this.age = age
+            this.mobile = mobile
+        }
+
+        function f1() {
+            // Person *p1 = new Person("Anil", 30, "9874537283") // in cpp
+            var p1 = new Person("Anil", 30, "9874537283") // in JS
+            console.log(p1)
+
+            var p2 = new Person()
+            console.log(p2)
+
+            var p3 = new Person()
+            p3.address = "Mumbai"
+            var p4 = {}
+            var p5 = new Object()
+
+            console.log(p3)
+            console.log(p4)
+            console.log(p5)
+        }
+        f1()
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+      .product {
+        background-color: beige;
+        border: solid black;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: gray 5px 5px 5px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // array of products
+      const products = ['product 1', 'product 2', 'product 3', 'product 4']
+
+      const div = products.map((product) => {
+        return <div className='product'>{product}</div>
+      })
+      ReactDOM.render(div, document.getElementById('root'))
+    </script>
+  </body>
+</html>

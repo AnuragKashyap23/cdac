@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h2>User Registration</h2>
+        <br>
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">Enter first name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="first name">
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Enter last name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="last name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Enter email</label>
+                    <input type="email" class="form-control" id="email" placeholder="email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Enter password</label>
+                    <input type="password" class="form-control" id="password" placeholder="password">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Enter phone number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="phone">
+                </div>
+                <div>
+                    <button onclick="register()" class="btn btn-success">Register</button>
+                    <a class="btn btn-danger" href="signin.html">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function register() {
+            const firstName = document.getElementById('firstName').value
+            const lastName = document.getElementById('lastName').value
+            const email = document.getElementById('email').value
+            const password = document.getElementById('password').value
+            const phone = document.getElementById('phone').value
+
+            const xhr = new XMLHttpRequest()
+            xhr.open("POST", "http://localhost:4000/users/registration")
+            xhr.setRequestHeader("content-type", "application/json")
+            const body = {
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                password: password,
+                phone: phone
+            }
+            xhr.send(JSON.stringify(body))
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    const response = JSON.parse(xhr.response)
+                    if (response.status == 'success')
+                        window.location.href = 'signin.html'
+                    else
+                        window.alert(response.error)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+
+</head>
+
+<body>
+    <script>
+        "use strict"
+        //parameterized function  
+        function f1(n1) {
+            console.log("value of n1 - " + n1 + ", typeof(n1) - " + typeof (n1))
+        }
+
+        //f1(10)
+        //f1(true)
+        //f1("sunbeam")
+        //f1(null)
+        //f1() // undefined
+
+        function f2(n1, n2) {
+            console.log("n1 - " + n1 + ", n2 - " + n2)
+        }
+
+        //f2(10, 20) // 10,10
+        //f2(10, "sunbeam") // 10,"sunbeam"
+        //f2(true, "sunbeam") // true,"sunbeam"
+        //f2(null)// null,undefined
+        ///f2()//undefined,undefined
+
+        function f3(n1) {
+            var result = n1 * n1
+            return result
+        }
+
+        // var res = f3(5); // 25
+        // var res = f3(5.5); //30.25
+        //var res = f3(true); //1
+        // var res = f3(false); //0
+        // var res = f3('a'); // NaN
+        //var res = f3(null); // 0
+        var res = f3()// NaN
+        console.log("res = " + res + ", type of res = " + typeof (res))
+
+    </script>
+</body>
+
+</html>

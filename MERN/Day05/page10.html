@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Function</title>
+</head>
+
+<body>
+    <script>
+
+        function Person(name, age, mobile) {
+            this.name = name
+            this.age = age
+            this.mobile = mobile
+            this.display = function () {
+                console.log("display")
+            }
+        }
+
+        Person.prototype.mydisplay = display
+
+        function display() {
+            console.log('Name - ' + this.name)
+            console.log('Age - ' + this.age)
+            console.log('Mobile - ' + this.mobile)
+        }
+
+        function f1() {
+            var p1 = new Person("Ramesh", 35, "7452846284")
+            console.log(p1)
+            // console.log(p1.toString())
+            // p1.display()
+            p1.mydisplay()
+        }
+
+        f1();
+    </script>
+</body>
+
+</html>

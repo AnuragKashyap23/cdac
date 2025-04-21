@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR</title>
+    <!-- Adding the Bootstrap to your html page -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <button onclick="getData()" class="btn btn-primary">Get Data</button>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Employee Id</td>
+                <td>Employee Name</td>
+                <td>Employee Salary</td>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+    <script>
+        function getData() {
+            const tbody = document.getElementById("tbody")
+
+            // AJAX -> Asynchronous JavaScript and XML
+            // Creating an object of XMLHttpRequest(XHR)
+            const xhr = new XMLHttpRequest()
+
+            console.log("ready-state - " + xhr.readyState)
+
+            // create the call that we need to bring the data from 
+            xhr.open("GET", "http://localhost:5500/2.API_Call/data.json")
+
+            console.log("ready-state after open - " + xhr.readyState)
+
+            //send the request to the server
+            xhr.send()
+            console.log("ready-state after send - " + xhr.readyState)
+
+            // this property is of type function which gets called
+            // every time the ready state is changed
+            xhr.onreadystatechange = function () {
+                console.log('onreadystatechanged called')
+                console.log("ready-state inside onreadystatechanged - " + xhr.readyState)
+                console.log("status - " + xhr.status)
+                // if the ready state is 4 and the response is sucessful i.e 200
+                // perform the operation of fetching the data
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.response)
+                    // It will convert the string data into the JSON array
+                    const arr = JSON.parse(xhr.response)
+                    console.log(arr)
+                    for (e of arr) {
+                        const row = `<tr>
+                            <td>${e.empid}</td>
+                            <td>${e.name}</td>
+                            <td>${e.salary}</td>
+                            </tr>`
+                        tbody.innerHTML += row
+                    }
+                }
+            }
+
+            // ready-state
+            // 0 -> xhr object is created but not opened
+            // 1 -> xhr object is opened (configured for the given method along with URL )
+            // 2 -> server receives the XHR request
+            // 3 -> server process the request
+            // 4 -> server sends the response 
+
+        }
+    </script>
+</body>
+
+</html>

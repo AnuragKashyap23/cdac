@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function add(n1, n2) {
+            var result = n1 + n2
+            console.log("Addition = " + result)
+        }
+
+
+
+        function f1() {
+            add(10, 20)
+            // add("sunbeam", " Infotech")
+            // add(true, "sunbeam")
+            // add(true, 10)
+            // add(10, null)
+            // add(10, new Object())
+
+            console.log(add)
+            console.log(typeof (add))
+
+            var myadd = add // function alias
+            console.log(myadd)
+            console.log(typeof (myadd))
+            myadd(30, 40)
+        }
+        // f1()
+
+        // function mul(n1, n2) {
+        //     var result = n1 * n2
+        //     console.log("Multiplication = " + result)
+        // }
+        // var mymul = mul;
+
+
+        var mymul = function (n1, n2) {
+            var result = n1 * n2
+            console.log("Multiplication = " + result)
+        }
+
+        //mul(10, 20) // NOT OK - mul is not defined
+        mymul(10, 20)
+
+    </script>
+</body>
+
+</html>

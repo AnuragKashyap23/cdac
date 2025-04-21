@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+
+</head>
+
+<body>
+    <script>
+        // return_type functionName(){return}
+        // return_type functionName(datatype parametername){return}
+
+        // var n1=10 // global scope variable
+
+        // parameterless functions
+        function f1() {
+            // var n1=10 // local scope variable
+            n1 = 10; // global scope variable
+            console.log("Hello from f1")
+            console.log("n1::f1 - " + n1)
+        }
+
+        function f2() {
+            console.log("Hello from f2")
+            console.log("n1::f2 - " + n1)
+        }
+        f1()
+        f2()
+
+
+    </script>
+</body>
+
+</html>

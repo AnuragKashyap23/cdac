@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Association</title>
+</head>
+
+<body>
+    <script>
+        class Date {
+            constructor(day, month, year) {
+                this.day = day
+                this.month = month
+                this.year = year
+            }
+
+            displayDate() {
+                console.log(this.day + "/" + this.month + "/" + this.year)
+            }
+        }
+
+        //Employee has-a DateofJoining
+        class Employee {
+            constructor(id, name, salary, day, month, year) {
+                this.id = id;
+                this.name = name
+                this.salary = salary
+                this.doj = new Date(day, month, year) // Association
+            }
+
+            displayEmployee() {
+                console.log("Id -  " + this.id)
+                console.log("Name -  " + this.name)
+                console.log("Salary -  " + this.salary)
+                console.log("DateofJoining - ")
+                this.doj.displayDate()
+
+            }
+        }
+
+        //const d1 = new Date(1, 1, 2001)
+        //d1.displayDate()
+        const e1 = new Employee(1, "Anil", 10000, 2, 2, 2002)
+        console.log(e1)
+        e1.displayEmployee()
+    </script>
+</body>
+
+</html>

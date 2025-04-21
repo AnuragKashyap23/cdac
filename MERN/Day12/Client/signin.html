@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Signin</h2>
+        <br>
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Enter email</label>
+                    <input type="email" class="form-control" id="email" placeholder="email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Enter password</label>
+                    <input type="password" class="form-control" id="password" placeholder="password">
+                </div>
+                <div>
+                    <button onclick="signin()" class="btn btn-success">Signin</button>
+                    <a class="btn btn-primary" href="signup.html">Signup</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        async function signin() {
+            const email = document.getElementById('email').value
+            const password = document.getElementById('password').value
+            const body = {
+                email: email,
+                password: password
+            }
+            const response = await fetch("http://localhost:4000/users/login", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(body),
+            })
+
+            const result = await response.json()
+            if (result.status == 'success') {
+                const data = result.data
+                window.sessionStorage.setItem('token', data.token)
+                window.location.href = 'category.html'
+            }
+            else
+                window.alert(result.error)
+
+        }
+    </script>
+</body>
+
+</html>

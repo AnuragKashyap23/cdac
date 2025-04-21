@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+    <!-- Adding the Bootstrap to your html page -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Adding the Jquery to your html page -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body>
+    <button onclick="getData()" class="btn btn-primary">Get Data</button>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Employee Id</td>
+                <td>Employee Name</td>
+                <td>Employee Salary</td>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+    <script>
+        function getData() {
+            $.ajax({
+                url: "http://localhost:5500/2.API_Call/data.json",
+                method: "GET",
+                success: (response) => {
+                    console.log(response)
+                    const arr = response
+                    for (e of arr) {
+                        const row = `<tr>
+                            <td>${e.empid}</td>
+                            <td>${e.name}</td>
+                            <td>${e.salary}</td>
+                            </tr>`
+                        $("tbody").append(row)
+                    }
+                }
+            })
+        }
+
+
+    </script>
+</body>
+
+</html>
