@@ -1,0 +1,5 @@
+package com.sunbeam;
+
+public abstract class Circle implements Shape{
+	private double radius; 
+}

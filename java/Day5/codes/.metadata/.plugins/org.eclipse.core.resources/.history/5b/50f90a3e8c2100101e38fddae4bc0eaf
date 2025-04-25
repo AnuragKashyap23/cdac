@@ -1,0 +1,20 @@
+package com.sunbeam;
+class Time{
+	private int hrs; 
+	private int mins; 
+	private int secs; 
+	public void display( ) {
+		System.out.printf("hrs : %d\nmins : %d\nsecs : %d",this.hrs, this.mins, this.secs);
+	}
+}
+class GoodTime extends Time{
+	//TODO 
+}
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,27 @@
+package com.sunbeam;
+final class Time{ // logically 100% complete 
+	private int hrs; 
+	private int mins; 
+	private int secs; 
+	public void display( ) {
+		System.out.printf("hrs : %d\nmins : %d\nsecs : %d",this.hrs, this.mins, this.secs);
+	}
+}
+// final classes cannot be inherited into any sub-class.
+// "effectively" all methods in final class become final.
+
+
+class GoodTime extends Time{
+	
+	public void display() {
+		//TODO 
+	}
+} 
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

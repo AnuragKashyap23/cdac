@@ -1,0 +1,9 @@
+package com.sunbeam;
+
+public class Rectangle implements Shape{
+	private double length; 
+	private double breadth; 
+	public Rectangle() {
+		// TODO Auto-generated constructor stub
+	}
+}

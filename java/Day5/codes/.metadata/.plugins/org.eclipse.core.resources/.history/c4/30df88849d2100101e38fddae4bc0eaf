@@ -1,0 +1,25 @@
+package com.sunbeam;
+abstract class A{
+	public final void f1( ) { // logically 100% complete 
+		//TODO
+	}
+	public void f2() { // partially complete 
+		//TODO
+	}
+	public abstract void f3( );  // logically 100% incomplete 
+	
+}
+class B extends A{
+	@Override
+	public void f2() {
+		System.out.println("B.f2()");
+	}
+}
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

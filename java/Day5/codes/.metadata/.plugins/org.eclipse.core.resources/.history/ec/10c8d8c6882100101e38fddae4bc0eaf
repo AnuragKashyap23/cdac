@@ -1,0 +1,19 @@
+package com.sunbeam;
+class SuperClass {
+    protected Number calculate(Integer i, Float f) {
+        return 100; 
+    }
+}
+class SubClass extends SuperClass {
+    /*protected or*/ public Boolean calculate(Integer i, Float f) {
+       return 100; 
+    }
+}
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

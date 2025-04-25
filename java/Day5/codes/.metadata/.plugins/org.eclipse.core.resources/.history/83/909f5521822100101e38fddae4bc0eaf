@@ -1,0 +1,29 @@
+package com.sunbeam;
+class Shape{
+	protected float area; 
+	public void acceptRecord( ) {
+		//TODO 
+	}
+	public void calculateArea( ) {
+		//TODO 
+	}
+	public void printRecord( ) {
+		System.out.println("Area : "+area);
+	}
+}
+class Rectangle extends Shape{
+	private float length; 
+	private float breadth; 
+	
+	public void acceptRecord() {
+		
+	}
+}
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

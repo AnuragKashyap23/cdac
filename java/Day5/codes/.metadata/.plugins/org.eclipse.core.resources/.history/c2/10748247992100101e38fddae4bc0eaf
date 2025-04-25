@@ -1,0 +1,13 @@
+package com.sunbeam;
+interface A{
+	
+}
+interface B{
+	
+}
+interface C extends A , B{
+	
+}
+public class Program {
+
+}

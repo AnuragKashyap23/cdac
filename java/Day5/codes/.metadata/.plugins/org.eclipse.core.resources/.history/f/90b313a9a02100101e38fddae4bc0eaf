@@ -1,0 +1,19 @@
+package com.sunbeam;
+
+public class Rectangle implements Shape{
+	private double length; 
+	private double breadth; 
+	public Rectangle() {
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public double calcArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public double calcPeri() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

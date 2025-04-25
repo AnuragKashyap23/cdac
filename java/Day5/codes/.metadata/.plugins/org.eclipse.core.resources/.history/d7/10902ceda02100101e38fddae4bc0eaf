@@ -1,0 +1,24 @@
+package com.sunbeam;
+
+public class Square implements Shape {
+	private double side; 
+	public Square() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Square(double side) {
+		super();
+		this.side = side;
+	}
+
+	@Override
+	public double calcArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public double calcPeri() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

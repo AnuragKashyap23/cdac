@@ -1,0 +1,19 @@
+package com.sunbeam;
+class Shape{
+	protected float area; 
+	
+	public float getArea() {
+		return area;
+	}
+	public void calculateArea( ) {
+		//TODO 
+	}
+}
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
